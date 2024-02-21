@@ -1,24 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ReactPage from "./pages/react";
+import * as React from "react";
+import { PrimeReactProvider } from "primereact/api";
+import IndividualIntervalsExample from "./components/carousel";
+import HomePage from "./pages/home";
+import HomePage2 from "./pages/home2";
+import RegisterPage from "./pages/join";
+
+const router = createBrowserRouter([
+  {
+    path: "/react",
+    element: <ReactPage></ReactPage>,
+  },
+  {
+    path: "/button",
+    element: <IndividualIntervalsExample></IndividualIntervalsExample>,
+  },
+  {
+    path: "/home",
+    element: <HomePage></HomePage>,
+  },
+  {
+    path: "/",
+    element: <HomePage2></HomePage2>,
+  },
+  {
+    path: "/join",
+    element: <RegisterPage></RegisterPage>,
+  },
+]);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.StrictMode>
+      <PrimeReactProvider>
+        <RouterProvider router={router} />
+      </PrimeReactProvider>
+    </React.StrictMode>
   );
 }
 
