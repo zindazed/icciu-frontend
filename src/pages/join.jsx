@@ -61,9 +61,11 @@ function RegisterPage() {
       return; // Prevent form submission
     }
     axios
-      .post("https://laravel.icciu.org.ug/laravel/public/api/members", formData)
+      // .post("https://laravel.icciu.org.ug/laravel/public/api/members", formData)
+      .post("http://127.0.0.1:8001/api/members", formData)
       .then((response) => {
         console.log("Success:", response.data);
+        
         setMessage(response.data.message);
         setSubmitting(false);
         // Handle success, maybe redirect user or show a success message

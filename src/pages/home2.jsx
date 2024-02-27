@@ -60,6 +60,7 @@ function HomePage2() {
       <div id="home" className="landing-wrapper contain: paint;">
         <div
           onMouseEnter={handleMouseEnter}
+          onTouchStart={handleMouseEnter}
           style={{
             position: "fixed",
             top: "0",
@@ -69,6 +70,8 @@ function HomePage2() {
         >
           <div
             onMouseLeave={handleMouseLeave}
+            onTouchMove={handleMouseLeave}
+            on
             style={{
               ...navbarStyle,
               ...(isHovered && { transform: "translateY(0)" }),
@@ -148,14 +151,21 @@ function HomePage2() {
                   </a>
                 </li>
               </ul>
-              <div className="flex justify-content-between lg:block border-top-1 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0">
+              <div className="flex justify-content-between lg:incline border-top-1 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0">
                 {/* <Button
                 label="Login"
                 text
                 rounded
                 className="border-none font-light line-height-2 text-blue-500"
-              ></Button> */}
-                <a href="/join">
+                ></Button> */}
+                <a href="" className="lg:mr-3">
+                  <Button
+                    label="Donate"
+                    rounded
+                    className="border-none w-12 ml-5 font-light line-height-2 bg-green-500 text-white"
+                  ></Button>
+                </a>
+                <a href="/join" className="lg:mr-0 mr-8">
                   <Button
                     label="Join"
                     rounded
@@ -210,12 +220,23 @@ function HomePage2() {
         </div>
         <div id="about" className="py-0 px-4 lg:px-8 mt-0 mx-0 lg:mx-8">
           <div className="grid justify-content-center">
-            <div className="col-12 text-center mt-3 mb-4">
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="100"
+              data-aos-duration="4000"
+              data-aos-once="false"
+              className="col-12 text-center mt-3 mb-4"
+            >
               <h2 className="text-900 font-normal mb-2">About Us</h2>
               {/* <span className="text-600 text-2xl">Placerat in egestas erat...</span> */}
             </div>
 
-            <div className="col-12 md:col-12 lg:col-4 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
+            <div
+              data-aos="flip-left"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              className="col-12 md:col-12 lg:col-4 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0"
+            >
               <div
                 style={{
                   height: "fit-content",
@@ -248,7 +269,12 @@ function HomePage2() {
               </div>
             </div>
 
-            <div className="col-12 md:col-12 lg:col-4 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
+            <div
+              data-aos="flip-left"
+              data-aos-delay="250"
+              data-aos-duration="1000"
+              className="col-12 md:col-12 lg:col-4 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0"
+            >
               <div
                 style={{
                   height: "fit-content",
@@ -283,7 +309,12 @@ function HomePage2() {
               </div>
             </div>
 
-            <div className="col-12 md:col-12 lg:col-4 p-0 lg:pb-5 mt-4 lg:mt-0">
+            <div
+              data-aos="flip-left"
+              data-aos-delay="450"
+              data-aos-duration="1000"
+              className="col-12 md:col-12 lg:col-4 p-0 lg:pb-5 mt-4 lg:mt-0"
+            >
               <div
                 style={{
                   height: "fit-content",
@@ -480,6 +511,9 @@ function HomePage2() {
                         </div> */}
 
             <div
+              data-aos="fade-up-right"
+              data-aos-delay="100"
+              data-aos-duration="1000"
               className="col-12 mt-2 mb-6 p-2 md:p-8"
               style={{
                 borderRadius: "20px",
@@ -488,11 +522,27 @@ function HomePage2() {
               }}
             >
               <div className="flex flex-column justify-content-center align-items-center text-center px-3 py-3 md:py-0">
-                <h3 id="mandate" className="text-gray-900 mb-2">
+                <h3
+                  data-aos="slide-up"
+                  data-aos-delay="1100"
+                  data-aos-duration="1000"
+                  id="mandate"
+                  className="text-gray-900 mb-2"
+                >
                   MANDATE
                 </h3>
-                <span className="text-gray-600 text-2xl">ICCIU</span>
+                <span
+                  data-aos="fade-up"
+                  data-aos-delay="1500"
+                  data-aos-duration="1000"
+                  className="text-gray-600 text-2xl"
+                >
+                  ICCIU
+                </span>
                 <p
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
                   className="text-gray-900 sm:line-height-2 md:line-height-4 text-1x2 mt-4"
                   style={{ maxWidth: "800px" }}
                 >
@@ -504,6 +554,9 @@ function HomePage2() {
                   of 57-Member States.
                 </p>
                 <p
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
                   className="text-gray-900 sm:line-height-2 md:line-height-4 text-1x2 mt-4"
                   style={{ maxWidth: "800px" }}
                 >
@@ -515,6 +568,9 @@ function HomePage2() {
                   &amp; Innovations and agriculture.
                 </p>
                 <p
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
                   className="text-gray-900 sm:line-height-2 md:line-height-4 text-1x2 mt-4"
                   style={{ maxWidth: "800px" }}
                 >
@@ -524,6 +580,9 @@ function HomePage2() {
                   transformation.
                 </p>
                 <p
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
                   className="text-gray-900 sm:line-height-2 md:line-height-4 text-1x2 mt-4"
                   style={{ maxWidth: "800px" }}
                 >
@@ -533,6 +592,9 @@ function HomePage2() {
                   income country”.
                 </p>
                 <p
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
                   className="text-gray-900 sm:line-height-2 md:line-height-4 text-1x2 mt-4"
                   style={{ maxWidth: "800px" }}
                 >
@@ -542,6 +604,9 @@ function HomePage2() {
                   sector players.
                 </p>
                 <img
+                  data-aos="fade"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
                   src="/demo/images/landing/ICCIU-2.png"
                   className="mt-4"
                   alt="Company logo"
@@ -552,14 +617,28 @@ function HomePage2() {
           </div>
         </div>
 
-        <div id="services" className="py-0 px-4 lg:px-8 mx-0 my-0 lg:mx-8">
-          <div className="text-center">
+        <div
+          data-aos="fade-up-right"
+          data-aos-delay="100"
+          data-aos-duration="1000"
+          id="services"
+          className="py-0 px-4 lg:px-8 mx-0 my-0 lg:mx-8"
+        >
+          <div
+            data-aos="fade-up-right"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            className="text-center"
+          >
             <h2 className="text-900 font-normal mb-3">Business and Trade</h2>
             {/* <span className="text-600 text-2xl">Amet consectetur adipiscing elit...</span> */}
           </div>
 
           <div className="grid mt-4 pb-2 md:pb-8">
             <div
+              data-aos="fade-up-right"
+              data-aos-delay="100"
+              data-aos-duration="1000"
               className="flex justify-content-center col-12 lg:col-6 bg-purple-100 p-0 flex-order-1 lg:flex-order-0"
               style={{ borderRadius: "8px" }}
             >
@@ -571,8 +650,16 @@ function HomePage2() {
               />
             </div>
 
-            <div className="col-12 lg:col-6 my-auto flex flex-column lg:align-items-end text-center lg:text-right">
+            <div
+              data-aos="fade-up-left"
+              data-aos-delay="100"
+              data-aos-duration="1000"
+              className="col-12 lg:col-6 my-auto flex flex-column lg:align-items-end text-center lg:text-right"
+            >
               <div
+                data-aos="fade-up-left"
+                data-aos-delay="100"
+                data-aos-duration="1000"
                 className="flex align-items-center justify-content-center bg-purple-200 align-self-center lg:align-self-end"
                 style={{
                   width: "4.2rem",
@@ -582,10 +669,18 @@ function HomePage2() {
               >
                 <i className="pi pi-fw pi-mobile text-5xl text-purple-700"></i>
               </div>
-              <h2 className="line-height-1 text-900 text-3xl font-normal">
+              <h2
+                data-aos="fade-up-left"
+                data-aos-delay="100"
+                data-aos-duration="1000"
+                className="line-height-1 text-900 text-3xl font-normal"
+              >
                 We’re are here to help you
               </h2>
               <span
+                data-aos="fade-up-left"
+                data-aos-delay="100"
+                data-aos-duration="1000"
                 className="text-700 text-1x2 line-height-3 ml-0 md:ml-2"
                 style={{ maxWidth: "650px" }}
               >
@@ -597,9 +692,17 @@ function HomePage2() {
             </div>
           </div>
 
-          <div className="grid my-2 pt-2 md:pt-2">
+          <div
+            data-aos="fade-up-left"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            className="grid my-2 pt-2 md:pt-2"
+          >
             <div className="col-12 lg:col-6 my-auto flex flex-column text-center lg:text-left lg:align-items-start">
               <div
+                data-aos="fade-up-right"
+                data-aos-delay="100"
+                data-aos-duration="1000"
                 className="flex align-items-center justify-content-center bg-yellow-200 align-self-center lg:align-self-start"
                 style={{
                   width: "4.2rem",
@@ -609,25 +712,72 @@ function HomePage2() {
               >
                 <i className="pi pi-fw pi-desktop text-5xl text-yellow-700"></i>
               </div>
-              <h2 className="line-height-1 text-900 text-3xl font-normal">
+              <h2
+                data-aos="fade-up-right"
+                data-aos-delay="100"
+                data-aos-duration="1000"
+                className="line-height-1 text-900 text-3xl font-normal"
+              >
                 MEMBERSHIP
               </h2>
               <span
+                data-aos="fade-up-right"
+                data-aos-delay="100"
+                data-aos-duration="1000"
                 className="text-700 text-1x2 line-height-3 mr-0 md:mr-2"
                 style={{ maxWidth: "650px" }}
               >
                 <ul>
-                  <li>Small medium enterprises (SMEs)</li>
-                  <li>Corporate Companies</li>
-                  <li>Manufactures</li>
-                  <li>Civil society Organizations (CSOs)</li>
-                  <li>Foreign Direct Investments (FDIs)</li>
-                  <li>Ministries, Departments and Agencies (MDAs)</li>
+                  <li
+                    data-aos="fade-up-right"
+                    data-aos-delay="100"
+                    data-aos-duration="1000"
+                  >
+                    Small medium enterprises (SMEs)
+                  </li>
+                  <li
+                    data-aos="fade-up-right"
+                    data-aos-delay="100"
+                    data-aos-duration="1000"
+                  >
+                    Corporate Companies
+                  </li>
+                  <li
+                    data-aos="fade-up-right"
+                    data-aos-delay="100"
+                    data-aos-duration="1000"
+                  >
+                    Manufactures
+                  </li>
+                  <li
+                    data-aos="fade-up-right"
+                    data-aos-delay="100"
+                    data-aos-duration="1000"
+                  >
+                    Civil society Organizations (CSOs)
+                  </li>
+                  <li
+                    data-aos="fade-up-right"
+                    data-aos-delay="100"
+                    data-aos-duration="1000"
+                  >
+                    Foreign Direct Investments (FDIs)
+                  </li>
+                  <li
+                    data-aos="fade-up-right"
+                    data-aos-delay="100"
+                    data-aos-duration="1000"
+                  >
+                    Ministries, Departments and Agencies (MDAs)
+                  </li>
                 </ul>
               </span>
             </div>
 
             <div
+              data-aos="fade-up-right"
+              data-aos-delay="100"
+              data-aos-duration="1000"
               className="flex justify-content-end flex-order-1 sm:flex-order-2 col-12 lg:col-6 bg-yellow-100 p-0"
               style={{ borderRadius: "8px" }}
             >
@@ -641,14 +791,30 @@ function HomePage2() {
           </div>
         </div>
 
-        <div id="contact" className="py-4 px-4 lg:px-8 my-2 md:my-4">
-          <div className="text-center">
+        <div
+          data-aos="fade-up-right"
+          data-aos-delay="100"
+          data-aos-duration="1000"
+          id="contact"
+          className="py-4 px-4 lg:px-8 my-2 md:my-4"
+        >
+          <div
+            data-aos="zoom-in-down"
+            data-aos-delay="100"
+            data-aos-duration="4000"
+            className="text-center"
+          >
             <h2 className="text-900 font-normal mb-2">Contact Us</h2>
             {/* <span className="text-600 text-2xl">LOCATION</span> */}
           </div>
 
           <div className="grid justify-content-between mt-8 md:mt-0">
-            <div className="col-12 lg:col-4 p-0 md:p-3">
+            <div
+              data-aos="flip-down"
+              data-aos-delay="100"
+              data-aos-duration="1000"
+              className="col-12 lg:col-4 p-0 md:p-3"
+            >
               <div className="p-3 flex flex-column border-200 pricing-card cursor-pointer border-2 hover:border-primary transition-duration-300 transition-all">
                 {/* <h3 className="text-900 text-center my-5">Free</h3>
                                 <img src="/demo/images/landing/free.svg" className="w-10 h-10 mx-auto" alt="free" />
@@ -683,7 +849,12 @@ function HomePage2() {
               </div>
             </div>
 
-            <div className="col-12 lg:col-4 p-0 md:p-3 mt-4 md:mt-0">
+            <div
+              data-aos="flip-down"
+              data-aos-delay="300"
+              data-aos-duration="1000"
+              className="col-12 lg:col-4 p-0 md:p-3 mt-4 md:mt-0"
+            >
               <div className="p-3 flex flex-column border-200 pricing-card cursor-pointer border-2 hover:border-primary transition-duration-300 transition-all">
                 {/* <h3 className="text-900 text-center my-5">Startup</h3>
                                 <img src="/demo/images/landing/startup.svg" className="w-10 h-10 mx-auto" alt="startup" />
@@ -718,7 +889,12 @@ function HomePage2() {
               </div>
             </div>
 
-            <div className="col-12 lg:col-4 p-0 md:p-3 mt-4 md:mt-0">
+            <div
+              data-aos="flip-down"
+              data-aos-delay="500"
+              data-aos-duration="1000"
+              className="col-12 lg:col-4 p-0 md:p-3 mt-4 md:mt-0"
+            >
               <div className="p-3 flex flex-column border-200 pricing-card cursor-pointer border-2 hover:border-primary transition-duration-300 transition-all">
                 {/* <h3 className="text-900 text-center my-5">Enterprise</h3>
                                 <img src="/demo/images/landing/enterprise.svg" className="w-10 h-10 mx-auto" alt="enterprise" />
@@ -761,7 +937,12 @@ function HomePage2() {
           </div>
         </div>
 
-        <div className="py-4 px-4 mx-0 mt-8 lg:mx-8">
+        <div
+          data-aos="zoom-out"
+          data-aos-delay="100"
+          data-aos-duration="1000"
+          className="py-4 px-4 mx-0 mt-8 lg:mx-8"
+        >
           <div className="grid justify-content-between">
             <div className="col-12 md:col-2" style={{ marginTop: "-1.5rem" }}>
               <a

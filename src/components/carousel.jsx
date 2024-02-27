@@ -3,6 +3,7 @@ import { Button } from "primereact/button";
 import { Carousel } from "primereact/carousel";
 import { Tag } from "primereact/tag";
 import { ProductService } from "../service/ProductService";
+import AOS from "aos";
 
 export default function MainSlide() {
   const [products, setProducts] = useState([]);
@@ -51,7 +52,21 @@ export default function MainSlide() {
     );
   }, []);
 
+  useEffect(() => {
+    // Call AOS.refresh() every 10 seconds
+    const intervalId = setInterval(() => {
+      AOS.refresh();
+    }, 10000);
+
+    // Clean up function to clear interval on component unmount
+    return () => clearInterval(intervalId);
+  }, []);
+
   // const App = () => {};
+
+  const changeSlide = (event) => {
+    AOS.refresh();
+  };
 
   const productTemplate = (product) => {
     // Function to chunk the items array into arrays of a specified size
@@ -80,6 +95,9 @@ export default function MainSlide() {
 
     return (
       <div
+        data-aos="zoom-in"
+        data-aos-delay="50"
+        data-aos-duration="1000"
         style={{
           backgroundImage: backgroundImageUrl,
           backgroundSize: "cover",
@@ -97,7 +115,12 @@ export default function MainSlide() {
             margin: "2%",
           }}
         >
-          <div style={overlayStyle}>
+          <div
+            data-aos="fade"
+            data-aos-delay="1050"
+            data-aos-duration="1000"
+            style={overlayStyle}
+          >
             <div>
               <h4 className="mb-1 text-white">{product.name}</h4>
               <div style={{ display: "flex" }}>
@@ -105,7 +128,13 @@ export default function MainSlide() {
                   <div key={columnIndex} style={{ flex: 1, margin: "0 10px" }}>
                     <ul>
                       {column.map((item, index) => (
-                        <li className=" mb-1 text-white" key={index}>
+                        <li
+                          data-aos="fade-up-right"
+                          data-aos-delay={`${index * 1000}`}
+                          data-aos-duration="1000"
+                          className=" mb-1 text-white"
+                          key={index}
+                        >
                           {item}
                         </li>
                       ))}
@@ -144,6 +173,7 @@ export default function MainSlide() {
         showIndicators={false}
         showNavigators={false}
         itemTemplate={productTemplate}
+        onPageChange={changeSlide}
       />
     </div>
   );
